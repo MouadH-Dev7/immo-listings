@@ -1,93 +1,74 @@
-# immo-listings
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="اكتشف أفضل الإعلانات العقارية للبيع والكراء في الجزائر.">
+    <title>دارك | دليل الإعلانات العقارية</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="nav-wrap">
+            <a class="brand" href="#home" aria-label="دارك - الصفحة الرئيسية">
+                <span class="brand-mark">د</span>
+                <span>دار<span>ك</span><small>عقارك يبدأ من هنا</small></span>
+            </a>
+            <nav class="main-nav" aria-label="القائمة الرئيسية">
+                <a class="active" href="#home">الرئيسية</a>
+                <a href="#listings">الإعلانات</a>
+                <a href="#about">من نحن</a>
+            </nav>
+            <a class="add-listing" href="mailto:contact@example.com?subject=إضافة%20إعلان%20عقاري">＋ أضف إعلانك</a>
+        </div>
+    </header>
 
+    <main id="home">
+        <section class="hero">
+            <div class="hero-pattern"></div>
+            <div class="hero-content">
+                <span class="eyebrow"><span></span> منصتك العقارية في الجزائر</span>
+                <h1>اعثر على المكان<br>الذي <em>يشبه أحلامك.</em></h1>
+                <p>شقق، منازل، أراضٍ ومحلات… اكتشف إعلانات عقارية تناسب احتياجاتك وميزانيتك.</p>
+                <a class="hero-cta" href="#listings">اكتشف الإعلانات <span>←</span></a>
+            </div>
+            <div class="hero-art" aria-hidden="true">
+                <div class="sun"></div>
+                <div class="building building-back"><i></i><i></i><i></i><i></i></div>
+                <div class="building building-front"><i></i><i></i><i></i><i></i><b></b></div>
+                <div class="plant plant-one">✦</div><div class="plant plant-two">✦</div>
+                <div class="art-label">بيتك القادم<br><strong>هنا يبدأ</strong></div>
+            </div>
+            <div class="hero-bottom"><span>01</span><span class="hero-line"></span><span>اكتشف • اختر • تواصل</span></div>
+        </section>
 
+        <section class="search-section" aria-label="البحث عن عقار">
+            <div class="search-heading"><span class="section-kicker">بحث سريع</span><h2>ما الذي تبحث عنه؟</h2></div>
+            <div class="search-panel">
+                <label class="search-field"><span class="field-icon">⌕</span><span class="field-content"><small>كلمة مفتاحية</small><input id="search-input" type="search" placeholder="المدينة، الحي أو اسم العقار..."></span></label>
+                <label class="search-field"><span class="field-icon">⌂</span><span class="field-content"><small>نوع العقار</small><select id="type-filter"><option value="">كل الأنواع</option></select></span></label>
+                <button id="search-button" class="search-button" type="button">ابحث عن عقار <span>←</span></button>
+            </div>
+        </section>
 
-## Getting started
+        <section class="listings-section" id="listings">
+            <div class="section-top">
+                <div><span class="section-kicker">اختر ما يناسبك</span><h2>أحدث الإعلانات العقارية</h2><p>تصفح العقارات المتاحة وتواصل مباشرة مع أصحاب الإعلانات.</p></div>
+                <div class="listing-count"><strong id="listing-count">—</strong><span>إعلان متاح</span></div>
+            </div>
+            <div id="properties-grid" class="grid-container" aria-live="polite">
+                <div class="loading-state"><span class="loader"></span><p>جاري تحميل الإعلانات...</p></div>
+            </div>
+            <p id="no-results" class="no-results" hidden>لا توجد إعلانات تطابق بحثك. جرّب كلمات أو نوع عقار آخر.</p>
+        </section>
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+        <section class="about-strip" id="about"><div class="about-icon">⌂</div><div><span class="section-kicker">بكل بساطة</span><h2>العثور على عقارك أصبح أسهل.</h2><p>منصة تجمع الإعلانات العقارية في مكان واحد لتسهيل البحث والتواصل.</p></div><a href="#listings">تصفح العقارات <span>←</span></a></section>
+    </main>
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
-
-## Add your files
-
-* [Create](https://docs.gitlab.com/user/project/repository/web_editor/#create-a-file) or [upload](https://docs.gitlab.com/user/project/repository/web_editor/#upload-a-file) files
-* [Add files using the command line](https://docs.gitlab.com/topics/git/add_files/#add-files-to-a-git-repository) or push an existing Git repository with the following command:
-
-```
-cd existing_repo
-git remote add origin https://gitlab.com/bentrazi_mouadh/immo-listings.git
-git branch -M main
-git push -uf origin main
-```
-
-## Integrate with your tools
-
-* [Set up project integrations](https://gitlab.com/bentrazi_mouadh/immo-listings/-/settings/integrations)
-
-## Collaborate with your team
-
-* [Invite team members and collaborators](https://docs.gitlab.com/user/project/members/)
-* [Create a new merge request](https://docs.gitlab.com/user/project/merge_requests/creating_merge_requests/)
-* [Automatically close issues from merge requests](https://docs.gitlab.com/user/project/issues/managing_issues/#closing-issues-automatically)
-* [Enable merge request approvals](https://docs.gitlab.com/user/project/merge_requests/approvals/)
-* [Set auto-merge](https://docs.gitlab.com/user/project/merge_requests/auto_merge/)
-
-## Test and Deploy
-
-Use the built-in continuous integration in GitLab.
-
-* [Get started with GitLab CI/CD](https://docs.gitlab.com/ci/quick_start/)
-* [Analyze your code for known vulnerabilities with Static Application Security Testing (SAST)](https://docs.gitlab.com/user/application_security/sast/)
-* [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/topics/autodevops/requirements/)
-* [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/user/clusters/agent/)
-* [Set up protected environments](https://docs.gitlab.com/ci/environments/protected_environments/)
-
-***
-
-# Editing this README
-
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thanks to [makeareadme.com](https://www.makeareadme.com/) for this template.
-
-## Suggestions for a good README
-
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
-
-## Name
-Choose a self-explaining name for your project.
-
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
-
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
-
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
-
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
-
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
-
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
-
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
-
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
-
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
-
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
-
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
-
-## License
-For open source projects, say how it is licensed.
-
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+    <footer class="site-footer"><a class="brand footer-brand" href="#home"><span class="brand-mark">د</span><span>دار<span>ك</span><small>عقارك يبدأ من هنا</small></span></a><p>© 2026 دارك — دليل الإعلانات العقارية في الجزائر.</p><a href="mailto:contact@example.com">تواصل معنا</a></footer>
+    <script src="app.js"></script>
+</body>
+</html>
