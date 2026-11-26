@@ -1,0 +1,26 @@
+image: node:20-alpine
+
+stages:
+  - test
+  - deploy
+
+# المرحلة 1: فحص ملفات الإعلانات في كل Branch و Merge Request
+validate-properties:
+  stage: test
+  script:
+    - npm test
+  artifacts:
+    paths:
+      - properties/list.json
+
+# المرحلة 2: نشر الموقع تلقائياً على GitLab Pages عند الدمج في main
+pages:
+  stage: deploy
+  script:
+    - mkdir -p public
+    - cp -r index.html style.css app.js properties public/
+  artifacts:
+    paths:
+      - public
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
